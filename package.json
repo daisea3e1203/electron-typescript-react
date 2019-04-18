@@ -1,0 +1,8 @@
+{
+  "name": "handmade-electron-react-typescript-boilerplate",
+  "version": "0.0.1",
+  "description": "boilerplate with electron, react and typescript",
+  "main": "index.js",
+  "author": "dabinlapau",
+  "license": "MIT"
+}
