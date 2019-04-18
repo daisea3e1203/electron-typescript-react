@@ -1,6 +1,7 @@
 import _ from "lodash";
 import "./style.css";
 import Icon from "../static/heimenkousei.jpg";
+import Data from "../static/data.csv";
 
 function component() {
   let element = document.createElement("div");
@@ -12,6 +13,8 @@ function component() {
   myIcon.src = Icon;
 
   element.appendChild(myIcon);
+
+  console.log(Data);
 
   return element;
 }
