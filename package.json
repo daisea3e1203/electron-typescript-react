@@ -4,5 +4,8 @@
   "description": "boilerplate with electron, react and typescript",
   "main": "index.js",
   "author": "dabinlapau",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webpack-cli": "^3.3.0"
+  }
 }
