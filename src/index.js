@@ -1,7 +1,7 @@
 import _ from "lodash";
 import "./style.css";
-import Icon from "../static/heimenkousei.jpg";
-import Data from "../static/data.csv";
+import Icon from "__static/heimenkousei.jpg";
+import Data from "__static/data.csv";
 
 function component() {
   let element = document.createElement("div");
