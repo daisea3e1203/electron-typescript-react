@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   entry: {
     app: "./src/index.js",
     print: "./src/print.js"
@@ -11,6 +12,8 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
+  // probably should use eval-source-map or something in real dev
+  devtool: "inline-source-map",
   resolve: {
     alias: {
       __static: path.resolve(__dirname, "static/")
