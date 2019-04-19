@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -17,7 +18,8 @@ module.exports = {
   devServer: {
     // tells where to serve static file from.
     // if I want to use this, don't use CleanWebpackPlugin
-    contentBase: path.join(__dirname, "dist")
+    contentBase: path.join(__dirname, "dist"),
+    hot: true
   },
   resolve: {
     alias: {
@@ -48,6 +50,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./static/index.html"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
