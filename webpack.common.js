@@ -1,10 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack");
 
 module.exports = {
-  mode: "development",
   entry: {
     app: "./src/index.js",
     print: "./src/print.js"
@@ -14,13 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   // probably should use eval-source-map or something in real dev
-  devtool: "inline-source-map",
-  devServer: {
-    // tells where to serve static file from.
-    // if I want to use this, don't use CleanWebpackPlugin
-    contentBase: path.join(__dirname, "dist"),
-    hot: true
-  },
+  devtool: "source-map",
   resolve: {
     alias: {
       __static: path.resolve(__dirname, "static/")
@@ -50,7 +42,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./static/index.html"
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ]
 };
