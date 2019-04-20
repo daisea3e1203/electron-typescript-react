@@ -4,22 +4,26 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
-    print: "./src/print.js"
+    app: "./src/index.ts",
+    print: "./src/print.ts"
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
-  // probably should use eval-source-map or something in real dev
-  devtool: "source-map",
   resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
-      __static: path.resolve(__dirname, "static/")
+      "@static": path.resolve(__dirname, "static/")
     }
   },
   module: {
     rules: [
+      {
+        test: /.tsx?$/,
+        use: ["ts-loader"],
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]

@@ -1,9 +1,9 @@
 import _ from "lodash";
 import "./style.css";
-import Icon from "__static/heimenkousei.jpg";
-import Data from "__static/data.csv";
+import Icon from "@static/heimenkousei.jpg";
+import Data from "@static/data.csv";
 
-import printMe from "./print.js";
+import printMe from "./print";
 
 function component() {
   const element = document.createElement("div");
