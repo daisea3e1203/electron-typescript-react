@@ -11,6 +11,8 @@ module.exports = merge(common, {
     // tells where to serve static file from.
     // if I want to use this, don't use CleanWebpackPlugin
     contentBase: path.join(__dirname, "dist"),
+    // you could use react hot loader if prefered
+    // https://gaearon.github.io/react-hot-loader/getstarted/
     hot: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
