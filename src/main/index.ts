@@ -22,7 +22,6 @@ class SampleApp {
   }
 
   private create() {
-    console.log(this.mainURL);
     this.mainWindow = new BrowserWindow({
       width: 800,
       height: 400,

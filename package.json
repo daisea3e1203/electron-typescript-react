@@ -6,11 +6,13 @@
   "author": "dabinlapau",
   "license": "MIT",
   "scripts": {
-    "serve-renderer": "webpack-dev-server --open --config ./config/webpack.dev.js --config-name renderer",
-    "build-main-dev": "webpack --config ./config/webpack.dev.js --config-name main",
+    "watch": "webpack-dev-server --config ./config/webpack.dev.js --config-name renderer",
+    "dev-main": "webpack --config ./config/webpack.dev.js --config-name main",
     "run-electron": "./node_modules/.bin/electron .",
-    "build-main-prod": "webpack --config ./config/webpack.prod.js --config-name main",
-    "build-renderer": "webpack --config ./config/webpack.prod.js --config-name renderer"
+    "start": "yarn dev-main && yarn run-electron",
+    "build-renderer": "webpack --config ./config/webpack.prod.js --config-name renderer",
+    "build-main": "webpack --config ./config/webpack.prod.js --config-name main",
+    "build": "yarn build-renderer && yarn build-main"
   },
   "dependencies": {
     "electron": "^4.1.4",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.123",
     "clean-webpack-plugin": "^2.0.1",
+    "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
     "csv-loader": "^3.0.2",
     "file-loader": "^3.0.1",
