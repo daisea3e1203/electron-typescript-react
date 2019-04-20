@@ -3,19 +3,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: "./src/index.ts",
-    print: "./src/print.ts"
-  },
+  name: "renderer",
+  // change target to web to show on web page.
+  target: "electron-renderer",
+  entry: path.resolve(__dirname, "..", "src", "renderer", "index.ts"),
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    filename: "index.js",
+    path: path.resolve(__dirname, "..", "dist")
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
-    alias: {
-      "@static": path.resolve(__dirname, "static/")
-    }
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
   },
   module: {
     rules: [
@@ -45,7 +42,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./static/index.html"
+      template: path.resolve(__dirname, "..", "static", "index.html")
     })
   ]
 };

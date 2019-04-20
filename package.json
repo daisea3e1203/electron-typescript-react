@@ -2,19 +2,24 @@
   "name": "handmade-electron-react-typescript-boilerplate",
   "version": "0.0.1",
   "description": "boilerplate with electron, react and typescript",
-  "main": "index.js",
+  "main": "dist/electron.js",
   "author": "dabinlapau",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js"
+    "serve-renderer": "webpack-dev-server --open --config ./config/webpack.dev.js --config-name renderer",
+    "build-main-dev": "webpack --config ./config/webpack.dev.js --config-name main",
+    "run-electron": "./node_modules/.bin/electron .",
+    "build-main-prod": "webpack --config ./config/webpack.prod.js --config-name main",
+    "build-renderer": "webpack --config ./config/webpack.prod.js --config-name renderer"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.123",
+    "electron": "^4.1.4",
     "lodash": "^4.17.11",
-    "papaparse": "^4.6.3"
+    "papaparse": "^4.6.3",
+    "react": "^16.8.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.123",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "csv-loader": "^3.0.2",
@@ -25,7 +30,6 @@
     "ts-loader": "^5.3.3",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.4",
