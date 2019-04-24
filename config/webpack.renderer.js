@@ -6,7 +6,7 @@ module.exports = {
   name: "renderer",
   // change target to web to show on web page.
   target: "electron-renderer",
-  entry: path.resolve(__dirname, "..", "src", "renderer", "index.ts"),
+  entry: path.resolve(__dirname, "..", "src", "renderer", "index"),
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "..", "dist")

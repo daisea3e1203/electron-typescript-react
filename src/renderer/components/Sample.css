@@ -1,6 +1,6 @@
 @font-face {
   font-family: "BigBlueTerminal";
-  src: url("../../static/BigBlue_TerminalPlus.ttf");
+  src: url("../../../static/BigBlue_TerminalPlus.ttf");
   font-weight: 600;
   font-style: normal;
 }
@@ -8,5 +8,5 @@
 .hello {
   color: blue;
   font-family: "BigBlueTerminal";
-  background: url("../../static/heimenkousei.jpg");
+  background: url("../../../static/heimenkousei.jpg");
 }
