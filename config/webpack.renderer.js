@@ -23,7 +23,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          "style-loader",
+          // "css-loader?modules&localIdentName=",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: "[name]--[local]--[hash:base64:5]"
+            }
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./Sample.css";
+import styles from "./Sample.css";
 import Icon from "@static/heimenkousei.jpg";
 
 export interface Props {
@@ -14,7 +14,7 @@ class Sample extends Component<Props> {
 
   render() {
     return (
-      <div className="hello">
+      <div className={styles.hello}>
         hello
         <button onClick={this.onClick}>
           Click me and check the console !!!
