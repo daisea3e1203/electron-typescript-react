@@ -15,7 +15,7 @@ class Sample extends Component<Props> {
   render() {
     return (
       <div className={styles.hello}>
-        hello
+        <p>hello</p>
         <button onClick={this.onClick}>
           Click me and check the console !!!
         </button>
