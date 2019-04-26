@@ -1,5 +1,9 @@
 # Electron-React-Typescript-Boilerplate
 
+## TODO
+  - minify css in production
+  - do tree shaking (reference webpack's documentation)
+
 ## Developmenet
 run
 ```
@@ -15,6 +19,7 @@ to start developing.
 ## Building
 run
 ```
-yarn build
+yarn electron-pack
 ```
-to build main files.
+to build into an electron application.
+built files are thrown into electron-dist
