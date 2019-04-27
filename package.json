@@ -7,14 +7,15 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "dev": "concurrently \"yarn watch\" \"yarn start-window\"",
+    "electron-pack": "yarn build && rm -drf ./electron-dist/* && node build.js",
     "watch": "webpack-dev-server --config ./config/webpack.dev.js --config-name renderer",
     "dev-main": "webpack --config ./config/webpack.dev.js --config-name main",
     "run-electron": "./node_modules/.bin/electron .",
-    "start": "yarn dev-main && yarn run-electron",
+    "start-window": "yarn dev-main && yarn run-electron",
     "build-renderer": "webpack --config ./config/webpack.prod.js --config-name renderer",
     "build-main": "webpack --config ./config/webpack.prod.js --config-name main",
-    "build": "yarn build-renderer && yarn build-main",
-    "electron-pack": "yarn build && rm -drf ./electron-dist/* && node build.js"
+    "build": "yarn build-renderer && yarn build-main"
   },
   "dependencies": {
     "lodash": "^4.17.11",

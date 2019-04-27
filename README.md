@@ -3,16 +3,12 @@
 ## TODO
   - minify css in production
   - do tree shaking (reference webpack's documentation)
-  - currently diabling some errors while testing using jest. somehow it doesn't seem to be reading @types/jest
+  - currently disabling some errors while testing using jest. somehow it doesn't seem to be reading @types/jest
 
 ## Developmenet
 run
 ```
-yarn watch
-```
-then
-```
-yarn start
+yarn dev
 ```
 to start developing.
 
