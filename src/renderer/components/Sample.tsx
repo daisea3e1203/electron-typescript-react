@@ -16,7 +16,6 @@ class Sample extends Component<Props> {
     return (
       <div className={styles.hello}>
         <p>hello</p>
-        <p>this is getting exciting</p>
         <button onClick={this.onClick}>
           Click me and check the console !!!
         </button>
